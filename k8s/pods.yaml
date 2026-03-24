@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: my-pod
-  Namespace: my-namespace
+  namespace: my-namespace
   labels:
     app: myapp
 spec:
