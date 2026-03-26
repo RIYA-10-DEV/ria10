@@ -7,7 +7,10 @@ metadata:
     department: devops
 spec:
   strategy:
-    type: Recrete
+    type: Recreate
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 1
   replicas: 3
   selector:
     matchLabels:
