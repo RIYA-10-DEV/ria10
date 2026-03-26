@@ -1,27 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-ds1
+  name: my-ds
   labels:
-    app: spider3
+    app: spider2
     department: devops
 spec:
   strategy:
-    type: Recreate
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 1
   replicas: 3
   selector:
     matchLabels:
-      myapp2: spider3
+      myapp2: spider2
       department: devops
     matchExpressions:
-     - {key: myapp2 , operator: In , values: [spider3]}
+     - {key: myapp2 , operator: In , values: [spider2]}
   template:
     metadata:
       labels:
-        myapp2: spider3
+        myapp2: spider2
         department: devops
     spec:
       containers:
-       - name: spider3
+       - name: spider2
          image: nginx:latest
          
