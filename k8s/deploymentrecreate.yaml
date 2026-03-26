@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-ds1
+  labels:
+    app: spider3
+    department: devops
+spec:
+  strategy:
+    type: Recreate
+  replicas: 3
+  selector:
+    matchLabels:
+      myapp2: spider3
+      department: devops
+    matchExpressions:
+     - {key: myapp2 , operator: In , values: [spider3]}
+  template:
+    metadata:
+      labels:
+        myapp2: spider3
+        department: devops
+    spec:
+      containers:
+       - name: spider3
+         image: nginx:latest
+         
