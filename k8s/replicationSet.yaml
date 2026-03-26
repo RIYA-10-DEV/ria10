@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-rs
+  labels:
+    app: myapp2
+    department: devops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      myapp2: spider
+      department: devops
+    matchExpressions:
+     - {key: myapp2 , operator: In , values: [spider]}
+  template:
+    metadata:
+      labels:
+        myapp2: spider
+        department: devops
+    spec:
+      containers:
+       - name: spider
+         image: nginx:latest
+         
