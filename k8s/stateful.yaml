@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: my-ss1
+  name: my-ss
   labels:
     app: my-app
 spec:
@@ -25,5 +25,5 @@ spec:
             - name: MARIADB_ROOT_PASSWORD
               valueFrom:
                 configMapKeyRef:
-                  name: my-app
+                  name: my-config
                   key: password 
