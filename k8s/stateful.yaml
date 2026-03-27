@@ -11,7 +11,6 @@ spec:
       app: my-app
   template:
     metadata:
-      name: my-app
       labels:
         app: my-app
         env: devops
@@ -24,4 +23,4 @@ spec:
              containerPort: 3306
       env:
         - name: MARIADB_ROOT_PASSWORD
-          values: admin123
+          value: admin123
