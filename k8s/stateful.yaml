@@ -21,6 +21,6 @@ spec:
           ports:
            - name: db
              containerPort: 3306
-      env:
-        - name: MARIADB_ROOT_PASSWORD
-          value: admin123
+          env:
+            - name: MARIADB_ROOT_PASSWORD
+              value: admin123
