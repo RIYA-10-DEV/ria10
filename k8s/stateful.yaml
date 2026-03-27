@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: my-ss
+  labels:
+    app: my-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      name: my-app
+      labels:
+        app: my-app
+        evn: devops
+    spec:
+      containers:
+       - name: mariadb
+         image: mariadb
+         ports:
+          - name: db
+            containerPort: 3306
+      evn:
+       - name: MARIADB_ROOT_PASSWORD
+         values: admin123
+          
