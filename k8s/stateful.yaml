@@ -25,4 +25,3 @@ spec:
       evn:
        - name: MARIADB_ROOT_PASSWORD
          values: admin123
-          
