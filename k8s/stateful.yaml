@@ -15,13 +15,13 @@ spec:
       labels:
         app: my-app
         evn: devops
-spec:
-  containers:
-    - name: mariadb
-      image: mariadb
-      ports:
-        - name: db
-          containerPort: 3306
-  evn:
-    - name: MARIADB_ROOT_PASSWORD
-      values: admin123
+    spec:
+      containers:
+        - name: mariadb
+          image: mariadb
+          ports:
+           - name: db
+             containerPort: 3306
+      evn:
+        - name: MARIADB_ROOT_PASSWORD
+          values: admin123
