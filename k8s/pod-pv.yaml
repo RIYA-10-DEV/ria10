@@ -11,6 +11,6 @@ spec:
         mountPath: "/usr/share/nginx/html"
      volumes:
       - name: hostpath-storage
-        PersistentVolumeClaim:
+        persistentVolumeClaim:
           claimName: my-hostpath-pvc
          
