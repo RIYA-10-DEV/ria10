@@ -9,5 +9,5 @@ spec:
    - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    Path: /mnt/mydata
+    path: /mnt/mydata
     type: DirectoryCreate
