@@ -9,8 +9,8 @@ spec:
      volumeMounts:
       - name: hostpath-storage
         mountPath: "/usr/local/apache2/htdocs/"
-     volumes:
-      - name: hostpath-storage
-        persistentVolumeClaim:
-          claimName: my-hostpath-pvc
+  volumes:
+    - name: hostpath-storage
+      persistentVolumeClaim:
+        claimName: my-hostpath-pvc
          
