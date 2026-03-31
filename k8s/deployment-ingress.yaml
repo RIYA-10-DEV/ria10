@@ -8,8 +8,8 @@ spec:
       app: cbz-home
   template:
     metadata:
-    labels:
-      app: cbz-home
+      labels:
+        app: cbz-home
     spec:
       containers:
        - name: cbz-home
@@ -27,8 +27,8 @@ spec:
       app: cbz-moblie
   template:
     metadata:
-    labels:
-      app: cbz-moblie
+      labels:
+        app: cbz-moblie
     spec:
       containers:
        - name: cbz-mobile
