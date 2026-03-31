@@ -4,7 +4,7 @@ metadata:
   name: cbz-home
 spec:
   selector:
-    metchLabels:
+    matchLabels:
       app: cbz-home
   template:
     metadata:
@@ -23,7 +23,7 @@ metadata:
   name: cbz-mobile
 spec:
   selector:
-    metchLabels:
+    matchLabels:
       app: cbz-moblie
   template:
     metadata:
