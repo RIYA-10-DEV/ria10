@@ -4,8 +4,6 @@ metadata:
   name: myingress
   labels:
     name: myingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec: 
   rules: 
   - host: home.com
@@ -14,17 +12,14 @@ spec:
       - pathType: Prefix
         path: "/"
         backend:
-         Service:
-           name: my-svc-home
-           port:
-             number: 80
-  - host: mobile.com
-    http: 
-      paths:
+          Service:
+            name: my-svc-home
+            port:
+              number: 80
       - pathType: Prefix
         path: "/"
         backend:
-         Service:
+          Service:
             name: my-svc-mobile
             port:
               number: 80  
