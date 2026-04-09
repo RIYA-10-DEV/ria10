@@ -17,7 +17,7 @@ resource "aws_instance" "module-instance" {
     availability_zone = var.availability_zone
     tags = {
       name = "riya"
-      Name = "my-insatnce"
+      Name = "my-insatnce1"
       Environment = "dev" 
     }
 }

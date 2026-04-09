@@ -3,7 +3,7 @@ variable "ami-id" {
     description = "us-east-1"
 }
 variable "instance_type" {
-    default = "t3.micro"
+    default = "t3.small"
 }
 variable "key_name" {
     default = "tf-1"
