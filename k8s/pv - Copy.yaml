@@ -11,4 +11,3 @@ spec:
   hostPath:
     path: /mnt/mydata
     type: DirectoryOrCreate
-    
