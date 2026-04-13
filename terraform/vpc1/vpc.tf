@@ -45,7 +45,6 @@ resource "aws_route_table" "myroute" {
 
 resource "aws_route_table_association" "attach_igw" {
     route_table_id = aws_route_table.myroute.id
-    gateway_id = aws_internet_gateway.myigw.id
     subnet_id = aws_subnet.pub-sub.id
   
 }
