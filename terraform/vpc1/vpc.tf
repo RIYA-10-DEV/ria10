@@ -31,7 +31,7 @@ resource "aws_subnet" "pvt-sub" {
     }
   
 }
-resource "aws_internet_getway" "myigw" {
+resource "aws_internet_geteway" "myigw" {
     vpc_id = aws_vpc.myvpc.id
 
 }
