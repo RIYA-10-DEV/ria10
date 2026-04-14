@@ -5,7 +5,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     region = "ap-south-1"
-    key = "tfstatefile"
+    bucket = "terraform200410"
     }
 }
 resource "aws_vpc" "myvpc" {
