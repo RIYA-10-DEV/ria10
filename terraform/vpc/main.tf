@@ -106,3 +106,46 @@ resource "aws_security_group" "my_sg" {
     }
   
 }
+resource "aws_instance" "public_instance" {
+    ami = var.ami_id
+    instance_type = var.instance_type
+    key_name = var.key_name
+    availability_zone = var.az_1
+    vpc_security_group_ids = [aws_security_group.my_sg.id]
+    subnet_id = aws_subnet.public_subnet.id
+
+user_data = <<-EOF
+               #!/bin/bash
+               apt-get update -y
+               apt-get install -y apache2
+               systemctl start apache2
+               systemctl enable apache2
+               echo "Hello" > /var/www/html/index.html
+               EOF
+    tags = {
+      Name = "${var.project}-public_instance"
+      env = var.env
+    }
+}
+
+resource "aws_instance" "private_instance" {
+    ami = var.ami_id
+    instance_type = var.instance_type
+    key_name = var.key_name
+    availability_zone = var.az_1
+    vpc_security_group_ids = [aws_security_group.my_sg.id]
+    subnet_id = aws_subnet.private_subnet.id
+
+user_data = <<-EOF
+               #!/bin/bash
+               apt-get update -y
+               apt-get install -y nginx
+               systemctl start nginx
+               systemctl enable nginx
+               echo "Hello" > /usr/share/nginx/html/index.html
+               EOF
+    tags = {
+      Name = "${var.project}-private_instance"
+      env = var.env
+    }
+}
