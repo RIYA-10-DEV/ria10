@@ -132,7 +132,7 @@ resource "aws_instance" "private_instance" {
     ami = var.ami_id
     instance_type = var.instance_type
     key_name = var.key_name
-    availability_zone = var.az_1
+    availability_zone = var.az_2
     vpc_security_group_ids = [aws_security_group.my_sg.id]
     subnet_id = aws_subnet.private_subnet.id
 
