@@ -1,5 +1,5 @@
 # RBAC (Role Based Access Control)
-    The primary security mechanism in kubernetes for regulating access to the kubernetes APT and cluster resources based on the roles assigned to user,groups,and service accounts.
+ The primary security mechanism in kubernetes for regulating access to the kubernetes APT and cluster resources based on the roles assigned to user,groups,and service accounts.
 
 ## Simple Summary
 1. User Actor (ID,Password) -> Generted Passwprd -> Detail Information (csr) -> Now Create Certificated
