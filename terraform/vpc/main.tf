@@ -114,7 +114,7 @@ resource "aws_instance" "public_instance" {
     vpc_security_group_ids = [aws_security_group.my_sg.id]
     subnet_id = aws_subnet.public_subnet.id
 
-user_data = <<-EOF
+    user_data = <<-EOF
                #!/bin/bash
                apt-get update -y
                apt-get install -y apache2
